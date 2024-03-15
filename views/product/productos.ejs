@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %>
+
+  <body>
+    <%- include("../partials/header") %>
+
+    <main class="main-home">
+      <section class="seccion-articulo">
+        <h2 class="section-title">TODOS LOS PRODUCTOS</h2>
+
+        <% for(let i = 0; i < productos.length; i++) { %>
+        <article class="item-articulo">
+          <!-- IMAGEN SIN BASE DE DATOS
+                  <div class="item-img">
+                      <a href="/productos/<%= productos[i].id %>">
+                          <img src="<%= productos[i].images %>" alt="imagen-producto" />
+                      </a>
+                  </div> -->
+
+          <!-- IMAGEN CON BASE DE DATOS -->
+          <div class="item-img">
+            <a href="/productos/<%= productos[i].id %>">
+              <img
+                src="<%= productos[i].images %>"
+                alt="imagen-producto"
+              />
+            </a>
+          </div>
+
+          <div class="item-descripcion">
+            <a href="/productos/<%= productos[i].id %>">
+              <p class="nombre-articulo"><%= productos[i].nombre %></p>
+            </a>
+            <p class="descripcion-articulo"><%= productos[i].color %></p>
+            <% if (productos[i].cuotas){%>
+              <p class="cuotas-articulo"><%= productos[i].cuotas %> cuotas sin interes</p>
+          <%} else{%>
+              <p class="cuotas-articulo" style="color: white;"> adasdasd</p>
+          <%}%>
+            <div class="precio-descuento-articulo">
+              <% if(productos[i].descuento === null) { %>
+              <p class="precio-articulo">$<%= productos[i].precio %></p>
+              <% } else { %>
+              <p class="precio-sin-descuento">$<%= productos[i].precio %></p>
+              <p class="precio-articulo">
+                $<%= productos[i].precioConDescuento %>
+              </p>
+              <p class="descuento-articulo">
+                <%= productos[i].descuento %>% off
+              </p>
+              <% } %>
+            </div>
+            <div class="div-button-descripcion">
+              <button>Agregar al carrito</button>
+            </div>
+          </div>
+        </article>
+        <% } %>
+      </section>
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<header>
+  <div class="div-header">
+    <div class="items-header">
+      <div class="items-menu">
+        <button type="menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+
+      <div class="items-logo">
+        <a href="/"><img src="/img/logo11.ico" alt="logo-pagina" /></a>
+      </div>
+
+      <div class="items-marca">
+        <a href="/"><p>VELVET</p></a>
+      </div>
+    </div>
+
+    <form class="items-header-search" action="/productos/search" method="post">
+      <div class="items-search">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Buscar"
+          required
+        />
+      </div>
+
+      <div class="items-submit">
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </form>
+
+    <% if (typeof user !== 'undefined' && user) { %>
+    <div class="loged-header">
+      <div class="profile-pic-container">
+        <a href="/user/profile"
+          ><img
+            class="profile-pic"
+            src="<%= user.profilePic %>"
+            alt="user-profile-pic"
+        /></a>
+      </div>
+      <a href="/user/profile" class="bienvenida"
+        ><p>Bienvenid@ <%= user.username %>!</p></a
+      >
+      <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+    <% } else { %>
+    <div class="items-header-link">
+      <a href="/user/login">Iniciar Sesión</a>
+      <a href="/user/register">Registrarse</a>
+      <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+    <% } %>
+  </div>
+</header>
