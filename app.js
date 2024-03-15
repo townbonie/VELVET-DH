@@ -51,7 +51,7 @@ app.use(
 );
 
 //alta de servidor puerto 3030
-app.listen(3031, () => console.log("El puerto de inicio es: 3030"));
+app.listen(3030, () => console.log("El puerto de inicio es: 3030"));
 
 //Configuracion motor de plantillas-EJS
 app.set("view engine", "ejs");
