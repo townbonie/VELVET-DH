@@ -20,9 +20,7 @@ body {
 /* CSS HEADER */
 header {
   background-color: #fff;
-  width: 100%;
-  position: fixed;
-  z-index: 100;
+  border-bottom: 1px solid #999696;
 }
 
 .div-header {
