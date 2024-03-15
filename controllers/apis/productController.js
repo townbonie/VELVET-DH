@@ -32,7 +32,7 @@ module.exports = {
         return db.producto.findAll({ include: [{ association: "category" }] });
       })
       .then((products) => {
-        const baseUrl = `${req.protocol}://${req.headers.host}`;
+        const baseUrl = `${req.protocol}s://${req.headers.host}`;
 
         // Mapear cada producto
         for (const product of products) {
@@ -68,7 +68,8 @@ module.exports = {
     db.producto
       .findByPk(req.params.id, { include: [{ association: "category" }] })
       .then((producto) => {
-        const baseUrl = `${req.protocol}://${req.headers.host}`;
+        const baseUrl = `${req.protocol}s://${req.headers.host}`;
+        console.log(req.protocol);
         return res.json({
           id: producto.id,
           name: producto.nombre,
