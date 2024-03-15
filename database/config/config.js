@@ -1,7 +1,7 @@
 module.exports = {
   development: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    username: "un67xs8a5qfboqxs",
+    password: "moe4OTBmU5wp015nOHw2",
     database: "bizzo4kzs2obssnnxoqz",
     host: "bizzo4kzs2obssnnxoqz-mysql.services.clever-cloud.com",
     dialect: "mysql",
